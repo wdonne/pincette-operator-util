@@ -5,7 +5,6 @@ import static java.util.Collections.emptyList;
 import static net.pincette.util.Collections.*;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import io.fabric8.kubernetes.model.annotation.PrinterColumn;
 import java.util.List;
 import java.util.function.Supplier;
 import net.pincette.util.StreamUtil;
@@ -36,7 +35,6 @@ public class Status {
   public final Health health;
 
   @JsonProperty("phase")
-  @PrinterColumn(name = "Phase")
   public final String phase;
 
   /** Creates a status without conditions and the phase "Ready". */
@@ -152,7 +150,6 @@ public class Status {
 
   public static class Health {
     @JsonProperty("status")
-    @PrinterColumn(name = "Health")
     public final String status;
 
     public Health() {
